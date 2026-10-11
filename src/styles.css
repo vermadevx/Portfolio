@@ -64,7 +64,7 @@
   h1,h2,h3,h4 { letter-spacing: 0; }
   ::selection { background: var(--primary); color: var(--primary-foreground); }
 }
-.portfolio-shell { min-height: 100vh; background-image: radial-gradient(ellipse at 85% 12%, var(--wash), transparent 40%), radial-gradient(ellipse at 0% 45%, var(--wash), transparent 42%); }
+.portfolio-shell { min-height: 100vh; overflow-x: clip; background-image: radial-gradient(ellipse at 85% 12%, var(--wash), transparent 40%), radial-gradient(ellipse at 0% 45%, var(--wash), transparent 42%); }
 .portfolio-content { max-width: 1440px; margin: auto; }
 .waiting .portfolio-content { display: none; }
 .entered .portfolio-content { animation: reveal 1s ease both; }
