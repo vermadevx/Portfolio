@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Instagram, Mail, ShieldCheck, Code2, Sparkles, GraduationCap, MapPin, Users, Mic, Check, ExternalLink, Terminal, Braces } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PortfolioLamp } from "@/components/portfolio-lamp";
+import { HelloRobot } from "@/components/hello-robot";
 import sculpture from "@/assets/ai-sculpture.jpg";
 
 export const Route = createFileRoute("/")({
@@ -21,14 +22,13 @@ const github = "https://github.com/vermadevx";
 const linkedin = "https://www.linkedin.com/in/daksh-verma-978a99405?utm_source=share_via&utm_content=profile&utm_medium=member_android";
 const instagram = "https://www.instagram.com/vermadevx";
 const email = "contact.vermadaksh@gmail.com";
-const linkedinCerts = "https://www.linkedin.com/in/daksh-verma-978a99405/details/certifications/";
 const certifications = [
-  { brand: "IBM", name: "Cybersecurity", issuer: "IBM", className: "ibm-mark", url: linkedinCerts },
-  { brand: "cisco", name: "Data Science", issuer: "Cisco", className: "cisco-mark", url: linkedinCerts },
-  { brand: "G", name: "Introduction to Generative AI", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
-  { brand: "G", name: "Introduction to Large Language Models", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
-  { brand: "G", name: "Prompt Design in Agent Platform", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
-  { brand: "G", name: "Responsible AI", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
+  { brand: "IBM", name: "Cybersecurity", issuer: "IBM", className: "ibm-mark", url: "https://www.credly.com/badges/b7a161af-994c-4b11-aa20-348cd874464d/linked_in_profile" },
+  { brand: "cisco", name: "Data Science", issuer: "Cisco", className: "cisco-mark", url: "https://www.credly.com/badges/9efac3b4-e765-43f6-b9f6-8d0dcace6688/linked_in_profile" },
+  { brand: "G", name: "Introduction to Generative AI", issuer: "Google Cloud", className: "google-mark", url: "https://www.skills.google/public_profiles/4097dae3-b8f6-4399-9723-0eb5e936a314/badges/28131880?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" },
+  { brand: "G", name: "Introduction to Large Language Models", issuer: "Google Cloud", className: "google-mark", url: "https://www.skills.google/public_profiles/4097dae3-b8f6-4399-9723-0eb5e936a314/badges/28132552?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" },
+  { brand: "G", name: "Prompt Design in Agent Platform", issuer: "Google Cloud", className: "google-mark", url: "https://www.skills.google/public_profiles/4097dae3-b8f6-4399-9723-0eb5e936a314/badges/28766338?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" },
+  { brand: "G", name: "Responsible AI", issuer: "Google Cloud", className: "google-mark", url: "https://www.skills.google/public_profiles/4097dae3-b8f6-4399-9723-0eb5e936a314/badges/28771098?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" },
 ];
 
 function Index() {
@@ -36,6 +36,7 @@ function Index() {
   const [lighting, setLighting] = useState(false);
   const [lampLit, setLampLit] = useState(true);
   const [copied, setCopied] = useState(false);
+  const [greeting, setGreeting] = useState(0);
   const enter = () => {
     if (lighting) return;
     setLighting(true);
@@ -56,7 +57,7 @@ function Index() {
         <header className="site-header">
           <a href="#home" className="wordmark">daksh<span>.</span></a>
           <nav aria-label="Main navigation"><a href="#about">About</a><a href="#learning">Learning</a><a href="#credentials">Credentials</a><a href="#journey">Journey</a></nav>
-          <Button variant="glass" asChild><a href={`mailto:${email}`}>Let’s talk <ArrowUpRight /></a></Button>
+          <Button variant="glass" asChild><a href={instagram} target="_blank" rel="noreferrer">Let’s talk <ArrowUpRight /></a></Button>
         </header>
         <main id="home" className="page-container">
           <section className="hero-section">
@@ -88,7 +89,7 @@ function Index() {
             <article className="glass-card experience-card"><span className="icon-tile"><MapPin /></span><span className="eyebrow">BEYOND THE CLASSROOM</span><h3>A glimpse into<br />the real world.</h3><p>An industrial visit to the Paytm & Neo4j event — a chance to experience the tech community beyond a screen.</p><div className="event-location"><MapPin size={15} /><span>One Skymark, Noida</span></div><div className="tag-list"><span>Industry exposure</span><span>New perspectives</span></div></article>
           </div></section>
           <section className="content-section project-section"><div className="section-title"><div><span className="eyebrow">05 / BUILDING IN PUBLIC</span><h2>The next idea starts here<span>.</span></h2></div></div><div className="collaboration-grid"><article className="glass-card projects-card"><Braces size={32} /><h3>Early days. Real ambition.</h3><p>I’m learning to turn ideas into projects with AI-assisted development. Follow along as I experiment, build, and share what I learn.</p><Button variant="glass" asChild><a href={github} target="_blank" rel="noreferrer">Follow my GitHub <ArrowUpRight /></a></Button></article><article className="glass-card roles-card"><span className="eyebrow">BETTER, TOGETHER</span><h3>Got a hackathon or<br />a project in mind?</h3><p>I’d love to be part of a team that’s building something meaningful.</p><div className="role-list"><span><Users size={15} /> Team lead</span><span><Mic size={15} /> Host</span><span><Code2 size={15} /> Vibe-coding developer</span></div></article></div></section>
-          <section id="contact" className="contact-section"><span className="availability"><span /> LET’S MAKE SOMETHING HAPPEN</span><h2>Good things start<br />with a conversation<span>.</span></h2><p>Internship, hackathon, project, or just a hello — I’m all ears.</p><Button variant="portfolio" size="lg" asChild><a href={`mailto:${email}`}>Say hello <ArrowUpRight /></a></Button><Button variant="link" onClick={copyEmail} className="email-copy">{email} {copied ? <Check /> : <Mail />}</Button>{copied && <span role="status" className="copy-status">Email copied</span>}</section>
+          <section id="contact" className="contact-section"><span className="availability"><span /> LET’S MAKE SOMETHING HAPPEN</span><h2>Good things start<br />with a conversation<span>.</span></h2><p>Internship, hackathon, project, or just a hello — I’m all ears.</p><Button variant="portfolio" size="lg" className="say-hello" onClick={() => setGreeting(value => value + 1)}>Say hello <Sparkles /></Button><div className="robot-stage">{greeting > 0 && <HelloRobot key={greeting} />}</div><Button variant="link" onClick={copyEmail} className="email-copy">{email} {copied ? <Check /> : <Mail />}</Button>{copied && <span role="status" className="copy-status">Email copied</span>}</section>
         </main>
         <footer className="site-footer"><span>© {new Date().getFullYear()} Daksh Verma</span><span className="footer-note">A work in progress. Just like me.</span><div><a href={github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href={linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a><a href={instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={18} /></a><a href={`mailto:${email}`} aria-label="Email"><Mail size={18} /></a><a href="#home" aria-label="Back to top"><ExternalLink size={17} /></a></div></footer>
       </div>

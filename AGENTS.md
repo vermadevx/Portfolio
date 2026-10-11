@@ -14,3 +14,4 @@
 - Keep reusable pull-cord lamp presentation in its own component and reveal state in the page; this separates visual mechanics from page access.
 - Use global semantic design tokens and portfolio Button variants for all presentation; this keeps the glass theme and interactive controls consistent.
 - Keep public portfolio facts static and avoid inventing project work or credential verification links; no backend is needed for a public profile.
+- Keep the greeting robot in a browser-safe SVG component with page-owned summon state and global token-based animations; this keeps the greeting replayable and respects reduced motion.
