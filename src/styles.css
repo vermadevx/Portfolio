@@ -84,7 +84,7 @@
 .hero-copy h1 { font-family: var(--font-display); font-weight: 500; font-size: 76px; line-height: 1.2; margin: 7px 0 15px; }
 .hero-copy h2 { font-weight: 500; font-size: 21px; line-height: 1.5; }
 .hero-description { margin-top: 14px; color: var(--muted-foreground); font-size: 13px; line-height: 1.9; }
-.hero-actions { display: flex; gap: 12px; margin-top: 27px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 27px; }
 .hero-actions a { height: 44px; padding: 0 21px; font-size: 12px; }
 .hero-location { display: flex; align-items: center; gap: 7px; margin-top: 23px; color: var(--ink-subtle); font-size: 10px; }
 .hero-location > span { margin: 0 5px; }
