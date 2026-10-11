@@ -289,6 +289,12 @@
   .entry-screen { padding-top: 380px; padding-bottom: 110px; overflow: hidden; }
   .entry-copy p { font-size: 13px; }
 }
+@media(orientation:portrait) and (max-width:700px) {
+  .hero-section { padding-top: 245px; }
+  .hero-lamp { left: 50%; right: auto; top: 0; width: 300px; height: 300px; transform: translateX(-50%); }
+  .hero-lamp .portfolio-lamp { transform: scale(.62); transform-origin: top center; margin: 0; }
+  .hero-lamp .lamp-light { top: 218px; height: 210px; }
+}
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior: auto; }
   .hello-robot, .hello-robot * { animation: none !important; }
