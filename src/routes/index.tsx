@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, ShieldCheck, Code2, Sparkles, GraduationCap, MapPin, Users, Mic, Check, ExternalLink, Terminal, Braces } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github, Linkedin, Instagram, Mail, ShieldCheck, Code2, Sparkles, GraduationCap, MapPin, Users, Mic, Check, ExternalLink, Terminal, Braces } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PortfolioLamp } from "@/components/portfolio-lamp";
 import sculpture from "@/assets/ai-sculpture.jpg";
@@ -18,15 +18,17 @@ export const Route = createFileRoute("/")({
 });
 
 const github = "https://github.com/vermadevx";
-const linkedin = "https://www.linkedin.com/in/daksh-verma-978a99405";
+const linkedin = "https://www.linkedin.com/in/daksh-verma-978a99405?utm_source=share_via&utm_content=profile&utm_medium=member_android";
+const instagram = "https://www.instagram.com/vermadevx";
 const email = "contact.vermadaksh@gmail.com";
+const linkedinCerts = "https://www.linkedin.com/in/daksh-verma-978a99405/details/certifications/";
 const certifications = [
-  { brand: "IBM", name: "Cybersecurity", issuer: "IBM", className: "ibm-mark" },
-  { brand: "cisco", name: "Data Science", issuer: "Cisco", className: "cisco-mark" },
-  { brand: "G", name: "Introduction to Generative AI", issuer: "Google Cloud", className: "google-mark" },
-  { brand: "G", name: "Introduction to Large Language Models", issuer: "Google Cloud", className: "google-mark" },
-  { brand: "G", name: "Prompt Design in Agent Platform", issuer: "Google Cloud", className: "google-mark" },
-  { brand: "G", name: "Responsible AI", issuer: "Google Cloud", className: "google-mark" },
+  { brand: "IBM", name: "Cybersecurity", issuer: "IBM", className: "ibm-mark", url: linkedinCerts },
+  { brand: "cisco", name: "Data Science", issuer: "Cisco", className: "cisco-mark", url: linkedinCerts },
+  { brand: "G", name: "Introduction to Generative AI", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
+  { brand: "G", name: "Introduction to Large Language Models", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
+  { brand: "G", name: "Prompt Design in Agent Platform", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
+  { brand: "G", name: "Responsible AI", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
 ];
 
 function Index() {
@@ -80,7 +82,7 @@ function Index() {
               <article className="glass-card skill-card"><span className="icon-tile"><Terminal /></span><h3>Java & Data Science</h3><p>Strengthening programming fundamentals and discovering the stories inside data.</p><div className="skill-footer"><span>Java · Cisco Data Science</span><span className="status-dot" /></div></article>
             </div>
           </section>
-          <section id="credentials" className="content-section"><div className="section-title"><div><span className="eyebrow">03 / SMALL STEPS, SOLID FOUNDATIONS</span><h2>Learning, backed by credentials<span>.</span></h2></div><span className="count-label">06 CERTIFICATIONS</span></div><div className="cert-grid">{certifications.map(cert => <article className="glass-card cert-card" key={cert.name}><span className={`cert-brand ${cert.className}`}>{cert.brand}</span><div><span className="tiny-label">{cert.issuer}</span><h3>{cert.name}</h3></div><ShieldCheck size={17} className="cert-check" /></article>)}</div></section>
+          <section id="credentials" className="content-section"><div className="section-title"><div><span className="eyebrow">03 / SMALL STEPS, SOLID FOUNDATIONS</span><h2>Learning, backed by credentials<span>.</span></h2></div><span className="count-label">06 CERTIFICATIONS</span></div><div className="cert-grid">{certifications.map(cert => <a className="glass-card cert-card" key={cert.name} href={cert.url} target="_blank" rel="noreferrer" aria-label={`View ${cert.name} credential`}><span className={`cert-brand ${cert.className}`}>{cert.brand}</span><div><span className="tiny-label">{cert.issuer}</span><h3>{cert.name}</h3></div><ShieldCheck size={17} className="cert-check" /></a>)}</div></section>
           <section id="journey" className="content-section"><div className="section-title"><div><span className="eyebrow">04 / WHERE IT ALL COMES TOGETHER</span><h2>My journey so far<span>.</span></h2></div></div><div className="journey-grid">
             <article className="glass-card education-card"><div className="card-heading"><h3><GraduationCap size={20} /> Education</h3><span className="tiny-label">THE FOUNDATION</span></div><div className="education-row"><span className="timeline-dot" /><div><span className="tiny-label text-primary">CURRENTLY PURSUING</span><h4>B.Tech · Computer Science & Engineering</h4><p>GGSIPU · Cybersecurity specialization</p><span className="education-detail">First year. A world of possibilities ahead.</span></div></div><div className="education-row"><span className="timeline-dot secondary-dot" /><div><h4>Ashok Memorial Public School</h4><p>Central Board of Secondary Education</p><div className="scores"><div><strong>94<span>%</span></strong><span>CLASS X</span></div><div><strong>81<span>%</span></strong><span>CLASS XII</span></div></div></div></div></article>
             <article className="glass-card experience-card"><span className="icon-tile"><MapPin /></span><span className="eyebrow">BEYOND THE CLASSROOM</span><h3>A glimpse into<br />the real world.</h3><p>An industrial visit to the Paytm & Neo4j event — a chance to experience the tech community beyond a screen.</p><div className="event-location"><MapPin size={15} /><span>One Skymark, Noida</span></div><div className="tag-list"><span>Industry exposure</span><span>New perspectives</span></div></article>
@@ -88,7 +90,7 @@ function Index() {
           <section className="content-section project-section"><div className="section-title"><div><span className="eyebrow">05 / BUILDING IN PUBLIC</span><h2>The next idea starts here<span>.</span></h2></div></div><div className="collaboration-grid"><article className="glass-card projects-card"><Braces size={32} /><h3>Early days. Real ambition.</h3><p>I’m learning to turn ideas into projects with AI-assisted development. Follow along as I experiment, build, and share what I learn.</p><Button variant="glass" asChild><a href={github} target="_blank" rel="noreferrer">Follow my GitHub <ArrowUpRight /></a></Button></article><article className="glass-card roles-card"><span className="eyebrow">BETTER, TOGETHER</span><h3>Got a hackathon or<br />a project in mind?</h3><p>I’d love to be part of a team that’s building something meaningful.</p><div className="role-list"><span><Users size={15} /> Team lead</span><span><Mic size={15} /> Host</span><span><Code2 size={15} /> Vibe-coding developer</span></div></article></div></section>
           <section id="contact" className="contact-section"><span className="availability"><span /> LET’S MAKE SOMETHING HAPPEN</span><h2>Good things start<br />with a conversation<span>.</span></h2><p>Internship, hackathon, project, or just a hello — I’m all ears.</p><Button variant="portfolio" size="lg" asChild><a href={`mailto:${email}`}>Say hello <ArrowUpRight /></a></Button><Button variant="link" onClick={copyEmail} className="email-copy">{email} {copied ? <Check /> : <Mail />}</Button>{copied && <span role="status" className="copy-status">Email copied</span>}</section>
         </main>
-        <footer className="site-footer"><span>© {new Date().getFullYear()} Daksh Verma</span><span className="footer-note">A work in progress. Just like me.</span><div><a href={github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href={linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a><a href={`mailto:${email}`} aria-label="Email"><Mail size={18} /></a><a href="#home" aria-label="Back to top"><ExternalLink size={17} /></a></div></footer>
+        <footer className="site-footer"><span>© {new Date().getFullYear()} Daksh Verma</span><span className="footer-note">A work in progress. Just like me.</span><div><a href={github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href={linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a><a href={instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={18} /></a><a href={`mailto:${email}`} aria-label="Email"><Mail size={18} /></a><a href="#home" aria-label="Back to top"><ExternalLink size={17} /></a></div></footer>
       </div>
     </div>
   );
