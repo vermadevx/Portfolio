@@ -65,7 +65,7 @@ function Index() {
               <p className="hello">Hey there, I’m</p><h1>Daksh Verma<span>.</span></h1>
               <h2>A curious mind. A builder in progress.</h2>
               <p className="hero-description">First-year cybersecurity student exploring the intersection of<br className="desktop-break" /> AI, code, and a more secure digital world.</p>
-              <div className="hero-actions"><Button variant="portfolio" size="lg" asChild><a href={`mailto:${email}`}>Let’s build something <ArrowUpRight /></a></Button><Button variant="glass" size="lg" asChild><a href={github} target="_blank" rel="noreferrer"><Github /> My GitHub</a></Button></div>
+              <div className="hero-actions"><Button variant="portfolio" size="lg" asChild><a href={`mailto:${email}`}>Let’s build something <ArrowUpRight /></a></Button><Button variant="glass" size="lg" asChild><a href={github} target="_blank" rel="noreferrer"><Github /> My GitHub</a></Button><Button variant="glass" size="lg" asChild><a href={linkedin} target="_blank" rel="noreferrer"><Linkedin /> My LinkedIn</a></Button></div>
               <div className="hero-location"><MapPin size={14} /> GGSIPU, India <span>·</span> B.Tech CSE · Cybersecurity</div>
             </div>
             <div className="hero-lamp"><PortfolioLamp lit={lampLit} onPull={() => setLampLit(value => !value)} /><span className="lamp-caption">Stay curious. Keep the light on.</span></div>
