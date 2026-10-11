@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, ShieldCheck, Code2, Sparkles, GraduationCap, MapPin, Users, Mic, Check, ExternalLink, Terminal, Braces } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github, Linkedin, Instagram, Mail, ShieldCheck, Code2, Sparkles, GraduationCap, MapPin, Users, Mic, Check, ExternalLink, Terminal, Braces } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PortfolioLamp } from "@/components/portfolio-lamp";
 import sculpture from "@/assets/ai-sculpture.jpg";
@@ -18,15 +18,17 @@ export const Route = createFileRoute("/")({
 });
 
 const github = "https://github.com/vermadevx";
-const linkedin = "https://www.linkedin.com/in/daksh-verma-978a99405";
+const linkedin = "https://www.linkedin.com/in/daksh-verma-978a99405?utm_source=share_via&utm_content=profile&utm_medium=member_android";
+const instagram = "https://www.instagram.com/vermadevx";
 const email = "contact.vermadaksh@gmail.com";
+const linkedinCerts = "https://www.linkedin.com/in/daksh-verma-978a99405/details/certifications/";
 const certifications = [
-  { brand: "IBM", name: "Cybersecurity", issuer: "IBM", className: "ibm-mark" },
-  { brand: "cisco", name: "Data Science", issuer: "Cisco", className: "cisco-mark" },
-  { brand: "G", name: "Introduction to Generative AI", issuer: "Google Cloud", className: "google-mark" },
-  { brand: "G", name: "Introduction to Large Language Models", issuer: "Google Cloud", className: "google-mark" },
-  { brand: "G", name: "Prompt Design in Agent Platform", issuer: "Google Cloud", className: "google-mark" },
-  { brand: "G", name: "Responsible AI", issuer: "Google Cloud", className: "google-mark" },
+  { brand: "IBM", name: "Cybersecurity", issuer: "IBM", className: "ibm-mark", url: linkedinCerts },
+  { brand: "cisco", name: "Data Science", issuer: "Cisco", className: "cisco-mark", url: linkedinCerts },
+  { brand: "G", name: "Introduction to Generative AI", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
+  { brand: "G", name: "Introduction to Large Language Models", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
+  { brand: "G", name: "Prompt Design in Agent Platform", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
+  { brand: "G", name: "Responsible AI", issuer: "Google Cloud", className: "google-mark", url: linkedinCerts },
 ];
 
 function Index() {
